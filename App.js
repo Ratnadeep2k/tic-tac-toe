@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View,TouchableOpacity, Button } from 'react-native';
 import {Entypo}  from '@expo/vector-icons';
 const itemContainer = new Array(9).fill("empty");
 
@@ -38,7 +38,7 @@ export default class App extends React.Component{
     return "black";
   };
 
-  restGame = ()=> {
+  resetGame = ()=> {
     itemContainer.fill("empty");
     this.setState({
       winMessage : "",
@@ -211,7 +211,8 @@ export default class App extends React.Component{
               
               <Text style={styles.winMessage} >{this.state.winMessage} </Text>
           </View>
-          <TouchableOpacity style={styles.button} onPress={this.resetGame} title="reset Game" />
+          <Button style={styles.button} onPress={this.resetGame} title="reset Game"> </Button>
+          <TouchableOpacity  />
       </View>
     );
   }
